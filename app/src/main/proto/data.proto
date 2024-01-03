@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_package = "com.musicapp.proto";
+option java_multiple_files = true;
+
+message Songs {
+  repeated Song song = 1;
+}
+
+message Song {
+  int32 id = 1;
+  string title = 2;
+  int32 duration = 4;
+  int32 size = 5;
+  StorageType storageType = 6;
+
+  enum StorageType {
+    MEMORY = 0;
+    FILESYSTEM = 1;
+  }
+
+}
